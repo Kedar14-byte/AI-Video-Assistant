@@ -284,7 +284,7 @@ This project is licensed under the MIT License.
 **Kedar Sankpal**
 
 - GitHub: https://github.com/Kedar14-byte
-- LinkedIn: *(Add your LinkedIn profile URL)*
+- LinkedIn: https://www.linkedin.com/in/kedar-sankpal14/
 
 ---
 
