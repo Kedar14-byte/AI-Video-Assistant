@@ -5,11 +5,28 @@ import os
 DOWNLOAD_DIR = 'downloades'
 os.makedirs(DOWNLOAD_DIR,exist_ok = True)
 
-def download_youtube_audio(url :str) ->str:
+def download_youtube_audio(url: str) -> str:
     output_path = os.path.join(DOWNLOAD_DIR, "%(title)s.%(ext)s")
+
     ydl_opts = {
         "format": "bestaudio/best",
         "outtmpl": output_path,
+
+        "noplaylist": True,
+        "quiet": True,
+        "no_warnings": True,
+
+        "retries": 10,
+        "fragment_retries": 10,
+
+        "http_headers": {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/137.0.0.0 Safari/537.36"
+            )
+        },
+
         "postprocessors": [
             {
                 "key": "FFmpegExtractAudio",
@@ -17,13 +34,17 @@ def download_youtube_audio(url :str) ->str:
                 "preferredquality": "192",
             }
         ],
-        "quiet": True,
     }
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        info = ydl.extract_info(url, download=True)
-        filename = ydl.prepare_filename(info).replace(".webm", ".wav").replace(".m4a", ".wav")
-    return filename
 
+    try:
+        with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+            info = ydl.extract_info(url, download=True)
+            filename = ydl.prepare_filename(info)
+            filename = os.path.splitext(filename)[0] + ".wav"
+            return filename
+
+    except Exception as e:
+        raise Exception(f"YouTube download failed: {e}")
 
 
 def convert_to_wav(input_path: str) -> str:
