@@ -1,109 +1,112 @@
-# 🎬 AI Video Assistant with RAG
+# 🎙️ MediaMind AI – Intelligent Media Analysis Platform
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
   <img src="https://img.shields.io/badge/Streamlit-Web_App-red?style=for-the-badge&logo=streamlit">
   <img src="https://img.shields.io/badge/LangChain-Framework-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/OpenAI-Whisper-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Mistral_AI-LLM-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Sarvam_AI-Speech_AI-purple?style=for-the-badge">
   <img src="https://img.shields.io/badge/ChromaDB-Vector_DB-purple?style=for-the-badge">
   <img src="https://img.shields.io/badge/RAG-Retrieval_Augmented_Generation-blueviolet?style=for-the-badge">
 </p>
 
-## 📌 Project Overview
+---
 
-AI Video Assistant is an end-to-end Generative AI application that transforms long videos into actionable insights.
+# 📌 Project Overview
 
-The application accepts a YouTube URL or a local audio/video file, transcribes the content using OpenAI Whisper, summarizes the discussion using Large Language Models (LLMs), extracts important action items and key decisions, and enables users to ask questions about the content using Retrieval-Augmented Generation (RAG).
+**MediaMind AI** is an AI-powered Media Intelligence Platform that transforms audio and video recordings into meaningful insights.
 
-This project demonstrates the practical integration of Speech-to-Text, NLP, Vector Databases, LangChain, and Streamlit into a single AI-powered application.
+Upload **MP3, MP4, WAV, or M4A** media files to automatically generate accurate transcripts, meeting titles, executive summaries, action items, key decisions, and open questions. The application also includes a Retrieval-Augmented Generation (RAG) chatbot, enabling users to ask contextual questions and explore their uploaded media using natural language.
+
+The project demonstrates an end-to-end Generative AI workflow by combining Speech-to-Text, Large Language Models (LLMs), Vector Databases, Retrieval-Augmented Generation (RAG), and an interactive Streamlit interface.
 
 ---
 
-## 🚀 Features
+# 🚀 Features
 
-- 🎥 Process YouTube videos
-- 📁 Upload local audio/video files
-- 🎙️ Speech-to-Text transcription using Whisper
-- 📝 AI-generated meeting summaries
-- ✅ Automatic Action Item extraction
-- 📌 Key Decision extraction
-- ❓ Open Question identification
-- 🔍 Semantic Search using ChromaDB
-- 🤖 Chat with your video using RAG
+- 📁 Upload audio and video recordings
+- 🎙️ Automatic Speech-to-Text transcription using OpenAI Whisper
+- 📝 AI-generated executive summaries
+- 🏷️ Automatic meeting title generation
+- ✅ Action Item extraction
+- 📌 Key Decision identification
+- ❓ Open Question extraction
+- 🔍 Semantic search using ChromaDB
+- 🤖 AI-powered conversational chatbot using RAG
 - 🌐 Interactive Streamlit Web Application
+- ⚡ Supports MP3, MP4, WAV and M4A formats
 
 ---
 
 # 🏗️ System Architecture
 
-```
-                YouTube URL / Local Video
-                           │
-                           ▼
-                 Audio Extraction (yt-dlp)
-                           │
-                           ▼
-                  Audio Chunking (Pydub)
-                           │
-                           ▼
-              Whisper Speech-to-Text Model
-                           │
-                           ▼
-                  Transcript Generation
-                           │
-          ┌────────────────┴────────────────┐
-          ▼                                 ▼
-     AI Summarizer                  Vector Embeddings
-          │                                 │
-          ▼                                 ▼
- Action Items / Decisions            ChromaDB Vector Store
-          │                                 │
-          └──────────────┬──────────────────┘
-                         ▼
-                 LangChain RAG Pipeline
-                         │
-                         ▼
-                Chat With Your Meeting
+```text
+             Audio / Video Upload
+      (MP3 • MP4 • WAV • M4A)
+                    │
+                    ▼
+        Audio Processing & Chunking
+          (FFmpeg + Pydub)
+                    │
+                    ▼
+      Whisper Speech-to-Text Model
+                    │
+                    ▼
+          Transcript Generation
+                    │
+        ┌───────────┴───────────┐
+        ▼                       ▼
+   Mistral AI              Embeddings
+        │                       │
+        ▼                       ▼
+Meeting Title            ChromaDB Vector Store
+Executive Summary               │
+Action Items                    │
+Key Decisions                   │
+Open Questions                  │
+        └───────────┬───────────┘
+                    ▼
+          LangChain RAG Pipeline
+                    │
+                    ▼
+         AI Chat with Your Media
 ```
 
 ---
 
 # 🛠️ Tech Stack
 
-### Programming Language
+## Programming Language
 
 - Python 3.11
 
-### AI / LLM
+## AI & Machine Learning
 
 - OpenAI Whisper
+- Mistral AI
+- Sarvam AI
 - LangChain
-- OpenAI / Google Gemini (depending on configuration)
+- Prompt Engineering
 
-### Vector Database
+## Vector Database
 
 - ChromaDB
 
-### NLP
+## Audio Processing
 
-- Whisper Speech Recognition
-- Prompt Engineering
-
-### Backend
-
-- Python
-
-### Frontend
-
-- Streamlit
-
-### Audio Processing
-
-- yt-dlp
 - FFmpeg
 - Pydub
 
-### Environment
+## Frontend
+
+- Streamlit
+
+## Backend
+
+- Python
+
+## Environment Management
 
 - Python Virtual Environment
 - dotenv
@@ -112,8 +115,8 @@ This project demonstrates the practical integration of Speech-to-Text, NLP, Vect
 
 # 📂 Project Structure
 
-```
-AI-Video-Assistant/
+```text
+MediaMind-AI/
 │
 ├── app.py
 ├── core/
@@ -129,8 +132,8 @@ AI-Video-Assistant/
 │   └── test.py
 │
 ├── requirements.txt
-├── .env
 ├── README.md
+├── .env
 └── .gitignore
 ```
 
@@ -141,30 +144,30 @@ AI-Video-Assistant/
 Clone the repository
 
 ```bash
-git clone https://github.com/Kedar14-byte/AI-Video-Assistant.git
+git clone https://github.com/Kedar14-byte/MediaMind-AI.git
 ```
 
-Go inside the project
+Move into the project
 
 ```bash
-cd AI-Video-Assistant
+cd MediaMind-AI
 ```
 
-Create virtual environment
+Create a virtual environment
 
 ```bash
 python -m venv venv
 ```
 
-Activate virtual environment
+Activate the environment
 
-Mac/Linux
+### macOS/Linux
 
 ```bash
 source venv/bin/activate
 ```
 
-Windows
+### Windows
 
 ```bash
 venv\Scripts\activate
@@ -182,19 +185,13 @@ pip install -r requirements.txt
 
 Create a `.env` file.
 
-Example
-
 ```text
-OPENAI_API_KEY=your_api_key
+MISTRAL_API_KEY=your_api_key
+SARVAM_API_KEY=your_api_key
+
+WHISPER_MODEL=small
+SARVAM_STT_MODEL=saaras:v2.5
 ```
-
-or
-
-```text
-GOOGLE_API_KEY=your_api_key
-```
-
-depending on the model you are using.
 
 ---
 
@@ -204,7 +201,7 @@ depending on the model you are using.
 streamlit run app.py
 ```
 
-Application will open at
+Open your browser at
 
 ```
 http://localhost:8501
@@ -212,59 +209,70 @@ http://localhost:8501
 
 ---
 
-# 💡 How It Works
+# 💡 Workflow
 
-1. User enters a YouTube URL or uploads a local video/audio file.
-2. Audio is extracted using yt-dlp.
-3. Audio is divided into chunks using Pydub.
+1. Upload an audio or video recording.
+2. Audio is processed and converted into supported formats.
+3. Media is divided into manageable chunks.
 4. Whisper converts speech into text.
-5. The transcript is summarized using an LLM.
-6. Action items, key decisions, and questions are extracted.
-7. Transcript embeddings are stored in ChromaDB.
-8. LangChain retrieves relevant chunks.
-9. Users can chat with the meeting using RAG.
+5. Mistral AI generates:
+   - Meeting Title
+   - Executive Summary
+   - Action Items
+   - Key Decisions
+   - Open Questions
+6. Transcript embeddings are stored in ChromaDB.
+7. LangChain retrieves relevant transcript chunks.
+8. Ask questions about your uploaded media using the RAG chatbot.
 
 ---
 
-# 📸 Demo
+# 📸 Application Preview
 
-### Home Page
+## 🏠 Home Page
 
-> Add a screenshot here
-
-### Summary
-
-> Add a screenshot here
-
-### Chat Interface
-
-> Add a screenshot here
+> Add screenshot
 
 ---
 
-# Future Improvements
+## 📝 Executive Summary
+
+> Add screenshot
+
+---
+
+## 🤖 AI Chat
+
+> Add screenshot
+
+---
+
+# 🔮 Future Enhancements
 
 - Speaker diarization
 - Multi-language transcription
-- PDF report generation
+- PDF meeting reports
+- Export to DOCX/PDF
+- Timestamp navigation
 - Meeting analytics dashboard
-- Cloud deployment
-- User authentication
+- Authentication & user accounts
+- Cloud storage integration
 - Audio sentiment analysis
-- Timestamp-based transcript navigation
 
 ---
 
-# Skills Demonstrated
+# 🎯 Skills Demonstrated
 
 - Python
 - Generative AI
 - Prompt Engineering
 - LangChain
 - Retrieval-Augmented Generation (RAG)
+- Vector Databases
 - ChromaDB
-- Vector Embeddings
 - OpenAI Whisper
+- Mistral AI
+- Sarvam AI
 - Speech-to-Text
 - Streamlit
 - REST API Integration
@@ -273,13 +281,13 @@ http://localhost:8501
 
 ---
 
-# License
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-# Author
+# 👨‍💻 Author
 
 **Kedar Sankpal**
 
