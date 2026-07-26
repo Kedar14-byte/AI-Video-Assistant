@@ -136,77 +136,6 @@ MediaMind-AI/
 ├── .env
 └── .gitignore
 ```
-
----
-
-# ⚙️ Installation
-
-Clone the repository
-
-```bash
-git clone https://github.com/Kedar14-byte/MediaMind-AI.git
-```
-
-Move into the project
-
-```bash
-cd MediaMind-AI
-```
-
-Create a virtual environment
-
-```bash
-python -m venv venv
-```
-
-Activate the environment
-
-### macOS/Linux
-
-```bash
-source venv/bin/activate
-```
-
-### Windows
-
-```bash
-venv\Scripts\activate
-```
-
-Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-# 🔑 Environment Variables
-
-Create a `.env` file.
-
-```text
-MISTRAL_API_KEY=your_api_key
-SARVAM_API_KEY=your_api_key
-
-WHISPER_MODEL=small
-SARVAM_STT_MODEL=saaras:v2.5
-```
-
----
-
-# ▶️ Run the Application
-
-```bash
-streamlit run app.py
-```
-
-Open your browser at
-
-```
-http://localhost:8501
-```
-
 ---
 
 # 💡 Workflow
@@ -231,19 +160,26 @@ http://localhost:8501
 
 ## 🏠 Home Page
 
-> Add screenshot
+<p align="center">
+<img src="assets/home.png" width="900">
+</p>
 
 ---
 
 ## 📝 Executive Summary
 
-> Add screenshot
+<p align="center">
+<img src="assets/summary.png" width="900">
+</p>
+
 
 ---
 
 ## 🤖 AI Chat
 
-> Add screenshot
+<p align="center">
+<img src="assets/ai chat.png" width="900">
+</p>
 
 ---
 
